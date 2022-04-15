@@ -13,6 +13,10 @@ class CustomAuthController extends Controller
         return view("auth.registration");
     }
     public function registerUser(Request $request){
-        echo 'value posted';
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'password'=>'required'
+        ]);
     }
 }

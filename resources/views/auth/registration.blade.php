@@ -24,22 +24,25 @@
 
                                 <form  action="{{ route('register-user') }}" method="post">
                                     @csrf
-                                    <div class="form-group">
+                                    <div class="form-group mt-4">
                                       <label for="name">Full Name</label>
                                       <input type="text" name="name" id="" class="form-control" placeholder="Enter the full name" value="" aria-describedby="helpId">
-                                      <small id="helpId" class="text-muted">*Requerd</small>
+                                      {{-- <small id="helpId" class="text-muted">*Required</small> --}}
+                                      <span class="text-warning">@error('name'){{ $message }} @enderror</span>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group mt-3">
                                       <label for="email">Email</label>
                                       <input type="text" name="email" id="" class="form-control" placeholder="Create a New Email" value="" aria-describedby="helpId">
-                                      <small id="helpId" class="text-muted">*Requerd</small>
+                                      {{-- <small id="helpId" class="text-muted">*Required</small> --}}
+                                      <span class="text-warning">@error('email'){{ $message }} @enderror</span>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group mt-3">
                                       <label for="password">Password</label>
                                       <input type="password" name="password" id="" class="form-control" placeholder="Create new Password" value="" aria-describedby="helpId">
-                                      <small id="helpId" class="text-muted">*Requerd</small>
+                                      {{-- <small id="helpId" class="text-muted">*Required</small> --}}
+                                      <span class="text-warning">@error('password'){{ $message }} @enderror</span>
                                     </div>
-                                    <div class="d-flex justify-content-center">
+                                    <div class="d-flex justify-content-center mt-4">
                                         <button type="submit"  name="registration" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                                     </div>
 
